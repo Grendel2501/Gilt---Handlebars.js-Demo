@@ -1,0 +1,167 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A layout example that shows off a responsive product landing page.">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" rel="stylesheet" >
+	<link href="http://www.richardbakare.com/css/sunburst.css" rel="stylesheet" >
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
+	<link href="giltdemo.css" rel="stylesheet">
+	<script type="text/javascript" src="http://www.richardbakare.com/js/handlebars.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>	
+	<script type="text/javascript" src="http://use.typekit.net/gis6vng.js"></script>
+	<script> 
+		try { Typekit.load(); } catch (e) {} 
+	</script>
+	<script type="text/javascript" src="giltdemo.js"></script>
+    <title>Gilt & handlebars.js Demo</title>
+
+</head>
+
+<body>
+<div class="content">
+    <div class="header">
+        <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+            <a class="pure-menu-heading" href="">Gilt & Mustache.js Demo</a>
+
+            <ul>
+                <li><a href="http://richardbakare.com" target="_blank" title="RichardBakare.com">Home</a></li>
+                <li><a href="http://richardbakare.com/personal/" target="_blank" title="Richard Bakare - Personal">Personal</a></li>
+                <li><a href="http://richardbakare.com/professional/" target="_blank" title="Richard Bakare - Professional">Professional</a></li>
+                <li><a href="http://richardbakare.com/blog/" target="_blank" title="Richard Bakare - Blog">Blog</a></li>
+                <li><a href="https://github.com/Grendel2501" target="_blank" title="Richard Bakare - GitRepo">GitRepo</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="splash">
+        <div class="pure-g-r">
+            <div class="pure-u-1-3">
+                <div class="l-box splash-image">
+                	<a href="http://www.gilt.com" target="_blank" title="Gilt.com">
+                    <img src="./images/gilt_logo.jpg"
+                         alt="Gilt Logo">
+                	</a>
+                </div>
+                <div class="l-box splash-image">
+                	<a href="http://handlebarsjs.com" target="_blank" title="handlebars.js">
+                    <img src="./images/handlebars_logo.png"
+                         alt="handlebars.js logo">
+                	</a>
+                </div>
+            </div>
+
+            <div class="pure-u-2-3">
+                <div class="l-box splash-text">
+                    <h1 class="splash-head">
+                        GILT & handlebars.js
+                    </h1>
+
+                    <h2 class="splash-subhead">
+                        This example page demonstrates how to use the Gilt API to get current sale items by category, and then use <a href="http://handlebarsjs.com" target="_blank" title="handlebars.js">handlebars.js</a> to translate the resulting json data into nice neat little card style objects. Any API that returns JSON data could be substituted in.  
+                    </h2>
+
+                    <p>
+                        <a href="http://handlebarsjs.com" class="pure-button primary-button" target="_blank" title="handlebars.js">
+                        	<i class="fa fa-arrow-circle-down"></i> Get Started
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    <h4 class="content-subhead">Design your Divs</h4>
+
+                    <h3>The Handlebars Template.</h3>
+                    <p>
+                    Handlebars.js uses pre-defined templates that look like regular html markup. The key differentiator is that you define these templates in a var in your main JS file that you load at the time of the page request. What's great about these templates is that if you have elements of your page that are dynamic and populated by API data, then you can quickly handle them in native JSON format and handle the look and feel all at once. Below is an example of what a handlebars template looks like. The parameter inside of the curly brackets is the JSON array key, which you want to get the value for. <code>{{user.name}}</code>
+                    </p>
+                    <pre class="sunburst"><span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll">class</span>=<span class="String"><span class="String">"</span>player_bio<span class="String">"</span></span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">h1</span><span class="MetaTagAll">&gt;</span></span><span class="EmbeddedSourceBright">{{player.name}}</span><span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">h1</span><span class="MetaTagAll">&gt;</span></span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;</span><span class="MetaTagAll">div</span> <span class="MetaTagAll">class</span>=<span class="String"><span class="String">"</span>body<span class="String">"</span></span><span class="MetaTagAll">&gt;</span></span>
+    	<span class="EmbeddedSourceBright">{{player.bio}}</span>
+    <span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span>
+<span class="MetaTagAll"><span class="MetaTagAll">&lt;/</span><span class="MetaTagAll">div</span><span class="MetaTagAll">&gt;</span></span></pre>
+                </div>
+            </div>
+
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <img src="./images/sample_div.png" alt="Empty handlebars template.">
+                    <hr />
+                    <p><em>Above</em>: example wireframe of a div you might want to put on a web page.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <img src="./images/json_div.png" alt="Example of JSON populated handlebars template.">
+                    <hr />
+                    <p><em>Above</em>: same example of the wireframe div, now populated with data.</p>
+                </div>
+            </div>
+
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    <h4 class="content-subhead">Call your data and parse</h4>
+
+                    <h3>The Handlebars Functions</h3>
+                    <p>
+                    When you make the call for your json data, handlebars will then populate the expression elements of the template you created with actual data. So in the above step above, the previously empty shell now has content the user wants to see. Below, is an example of handlebars working where I have grabbed the top four men's sales items from Gilt and created a section of the page to display them in. My raw template looks like this and is populated with values from the json data I get back from Gilt.
+                    </p>
+                    <p class="black">
+                    <code>var source =  '&lt;div class=&quot;pure-u-1-4&quot;&gt;' +</code><br />
+                    <code>'&lt;div class=&quot;l-box&quot;&gt;' +</code><br />
+                    <code>'&lt;div class=&quot;sales_entry&quot;&gt;' +</code><br />
+                    <code>'&lt;a href=&quot;{{sale_url}}&quot; title=&quot;{{name}}&quot; target=&quot;_blank&quot;&gt;' +</code><br />
+                    <code>'&lt;img src=&quot;{{link}}&quot; alt=&quot;{{name}}&quot;/&gt;' +</code><br />
+                    <code>'&lt;h3&gt;{{name}}&lt;/h3&gt;' +</code><br />
+                    <code>'&lt;/a&gt;' +</code><br />
+                    <code>'&lt;p class=&quot;desc&quot;>' +</code><br />
+                    <code>'{{description}}' +</code><br />
+                    <code>'&lt;/p&gt;' +</code><br />
+                    <code>'&lt;/div&gt;' +</code><br />
+                    <code>'&lt;/div&gt;' +</code><br />
+                    <code>'&lt;/div&gt;';</code><br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <center>
+        <div class="">
+            <h1 class="splash-head">
+                CURRENT GILT SALES EXAMPLE
+            </h1>
+    	</div>
+        </center>
+
+        <div class="pure-g-r" id="sales_items">
+        </div>
+
+        <div class="l-box ribbon">
+	        <h2>You can fork handlebars.js on</h2>
+	            <button class="pure-button">
+				    <a href="https://github.com/wycats/handlebars.js" target="_blank"><i class="fa fa-github fa-2x"></i> <h2>GitHub</h2></a>
+				</button><br /><br />
+			<span>Built with: <a href="http://purecss.io" target="_blank">Pure CSS</a>, <a href="http://handlebarsjs.com" target="_blank">handlebars.js</a>, <a href="http://www.panic.com/coda/" target="_blank">Coda 2</a>, and <a href="https://dev.gilt.com" target="_blank">Gilt API's</a>.</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <em>&#169; 2013 <a href="http://www.richardbakare.com/professional" title="El Diablo Rapido">Richard Bakare</a> - El Diablo Rapido</em>
+    </div>
+	
+</div>
+</body>
+</html>
